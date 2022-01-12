@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart';
+
 import 'main.dart';
 
 class Body extends StatefulWidget {
@@ -27,13 +27,14 @@ class _BodyState extends State<Body> {
                   ? ListView(
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(80, 10, 80, 30),
+                          padding: const EdgeInsets.fromLTRB(80, 10, 80, 30),
                           child: ClipOval(
                             child: FadeInImage(
                               fit: BoxFit.fill,
                               image: NetworkImage(dpUrl),
-                              placeholder:
-                                  AssetImage('assets/images/loading_image.gif'),
+                              placeholder: AssetImage(
+                                'assets/images/loading_image.gif',
+                              ),
                             ),
                           ),
                         ),
@@ -43,42 +44,48 @@ class _BodyState extends State<Body> {
                               child: Text(
                                 '$posts post(s)',
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                             Expanded(
                               child: Text(
                                 '$followers follower(s)',
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                             Expanded(
                               child: Text(
                                 '$following following',
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsets.all(30),
+                          padding: const EdgeInsets.all(30),
                           child: Row(
                             children: [
                               Expanded(
                                 child: Column(
                                   children: [
                                     isPrivate
-                                        ? Icon(
+                                        ? const Icon(
                                             Icons.check_circle,
                                             color: Colors.blue,
                                           )
-                                        : Icon(Icons.cancel),
-                                    Text('Is private'),
+                                        : const Icon(Icons.cancel),
+                                    const Text('Is private'),
                                   ],
                                 ),
                               ),
@@ -86,12 +93,12 @@ class _BodyState extends State<Body> {
                                 child: Column(
                                   children: [
                                     isVerified
-                                        ? Icon(
+                                        ? const Icon(
                                             Icons.check_circle,
                                             color: Colors.blue,
                                           )
-                                        : Icon(Icons.cancel),
-                                    Text('Is verified'),
+                                        : const Icon(Icons.cancel),
+                                    const Text('Is verified'),
                                   ],
                                 ),
                               ),
@@ -99,36 +106,36 @@ class _BodyState extends State<Body> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.fromLTRB(20, 10, 20, 5),
+                          padding: const EdgeInsets.fromLTRB(20, 10, 20, 5),
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
                               '$fullName',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.fromLTRB(20, 10, 20, 5),
+                          padding: const EdgeInsets.fromLTRB(20, 10, 20, 5),
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
                               '$biography',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.fromLTRB(20, 10, 20, 5),
+                          padding: const EdgeInsets.fromLTRB(20, 10, 20, 5),
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: InkWell(
                               child: externalUrl == 'null'
-                                  ? Text('')
+                                  ? const Text('')
                                   : Text(
                                       '$externalUrl',
                                       style: TextStyle(color: Colors.blue),
@@ -146,7 +153,7 @@ class _BodyState extends State<Body> {
                         height: 300,
                       ),
                     ),
-              margin: EdgeInsets.fromLTRB(0, 56, 0, 0),
+              margin: const EdgeInsets.fromLTRB(0, 56, 0, 0),
             ),
     );
   }

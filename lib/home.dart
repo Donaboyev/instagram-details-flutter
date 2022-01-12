@@ -1,8 +1,7 @@
-import 'package:connectivity/connectivity.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:connectivity/connectivity.dart';
+import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
 
 import 'body.dart';
 import 'main.dart';
@@ -88,6 +87,7 @@ class _HomePageState extends State<HomePage> {
             await Dio().get('https://www.instagram.com/$username/?__a=1');
         String statusCode = response.statusCode.toString();
         if (statusCode == '200') {
+          debugPrint('======> 200: ${response.data}');
           setState(() {
             found = true;
             noInternet = false;
@@ -115,6 +115,7 @@ class _HomePageState extends State<HomePage> {
           });
         }
       } catch (e) {
+        debugPrint('======> ex: $e');
         setState(() {
           isSearching = false;
           noInternet = false;

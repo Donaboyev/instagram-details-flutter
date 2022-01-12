@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insta_details/home.dart';
+
+import 'home.dart';
 
 bool found = false;
 String dpUrl = '';
